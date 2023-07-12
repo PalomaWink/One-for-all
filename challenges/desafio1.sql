@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE plan(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    price FLOAT(3,2) NOT NULL
+    price DECIMAL(5,2) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE user_person(
@@ -64,9 +64,9 @@ CREATE TABLE artist_follow(
 INSERT INTO SpotifyClone.plan (name, price)
 VALUES
   ('Gratuito', 0.00),
+  ('Familiar', 7.99),
   ('Universitário', 5.99),
-  ('Pessoal', 6.99),
-  ('Familiar', 7.99);
+  ('Pessoal', 6.99);
 
 INSERT INTO SpotifyClone.user_person (name, age, plan_id, subscribe_date)
 VALUES
