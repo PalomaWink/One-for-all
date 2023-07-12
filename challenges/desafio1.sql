@@ -36,6 +36,8 @@ CREATE TABLE song(
     id INT PRIMARY KEY AUTO_INCREMENT,
     album_id INT,
     FOREIGN KEY (album_id) REFERENCES album (id),
+    artist_id int,
+    FOREIGN KEY (artist_id) REFERENCES artist (id),
     name VARCHAR(255) NOT NULL,
     duration_seconds INT NOT NULL
 ) engine = InnoDB;
@@ -99,18 +101,18 @@ VALUES
 	(5, 'Somewhere Far Beyond', 2007),
 	(6, 'I Put A Spell On You', 2012);
     
-INSERT INTO SpotifyClone.song (album_id, name, duration_seconds)
+INSERT INTO SpotifyClone.song (album_id, artist_id, name, duration_seconds)
 VALUES
-	(1, '"BREAK MY SOUL"', 279),
-	(1, '"VIRGO\'S GROOVE"', 369),
-	(1, '"ALIEN SUPERSTAR"', 116),
-	(2, '"Don\'t Stop Me Now"', 203),
-	(2, '"Under Pressure"', 152),
-	(3, '"Como Nossos Pais"', 105),
-	(3, '"O Medo de Amar é o Medo de Ser Livre"', 207),
-	(4, '"Samba em Paris"', 267),
-	(5, '"The Bard\'s Song"', 244),
-	(6, '"Feeling Good"', 100);
+	(1, 1, 'BREAK MY SOUL', 279),
+	(1, 1, 'VIRGO\'S GROOVE', 369),
+	(1, 1, 'ALIEN SUPERSTAR', 116),
+	(2, 2, 'Don\'t Stop Me Now', 203),
+	(3, 2, 'Under Pressure', 152),
+	(4, 3, 'Como Nossos Pais', 105),
+	(5, 3, 'O Medo de Amar é o Medo de Ser Livre', 207),
+	(6, 4, 'Samba em Paris', 267),
+	(7, 5, 'The Bard\'s Song', 244),
+	(8, 6, 'Feeling Good', 100);
     
 INSERT INTO SpotifyClone.playback_history (user_id, song_id, date_time)
 VALUES
